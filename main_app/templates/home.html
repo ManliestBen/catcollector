@@ -16,5 +16,15 @@
     alt="Text reads: Cat Collector"
   />
 </section>
+{% if not user.is_authenticated %}
+  <section>
+    <form method='post' action="{% url 'home' %}" class="login">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="hidden" name="next" value="{{ next }}">
+      <button type="submit" class='btn submit'>Login</button>
+    </form>
+  </section>
+{% endif %}
 
 {% endblock %}
