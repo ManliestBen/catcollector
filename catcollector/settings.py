@@ -13,6 +13,8 @@ import environ
 import os
 env = environ.Env()
 from pathlib import Path
+# add this line
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
